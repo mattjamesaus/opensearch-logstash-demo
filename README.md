@@ -39,7 +39,7 @@ PUT _data_stream/logs-nginx
 
 ## Modify the docker-compose file
 Now that elasticsearch is running and the stream has been created uncomment the logstash portion of the docker-compose file and run
-`docker-compose up --build` this will create the logstash container with the opensearch plugin
+`docker-compose up --build` this will create the logstash container with the opensearch plugin. We need to do this eitherwise logstash will try and make the index instead of a stream.
 
 ## Send data to logstash
 Use the following command to send log data to logstash, this will then trigger the error as logstash is unable to create the stream.
